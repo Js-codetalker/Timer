@@ -6,10 +6,40 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body> 
-<div>
-	<input type="number" class="remainHours" value="00"></input>
-	<input type="number" class="remainMinutes" value="25"></input>
-	<input type="number" class="remainSeconds" value="00"></input>
+<div class="timer">
+	<div class="timer__config">
+		<img src="#" class="timer__config-img">
+	</div>
+	<div class="timer__countdownContainer">
+		<input type="number" class="timer__countdownContainer-numbers remainHours" value="00"></input>
+		<input type="number" class="timer__countdownContainer-numbers remainMinutes" value="25"></input>
+		<input type="number" class="timer__countdownContainer-numbers remainSeconds" value="00"></input>
+	</div>
+	<button class="timer__startButton"></button>
+	<button class="timer__resetButton"></button>
+</div>
+<div class="configMenu">
+	<img src="#" class="configMenu__closeMenu">
+	<p class="configMenu__info">Work time duration:</p>
+	<input type="number" name="" value="00">
+	<input type="number" name="" value="25">
+	<input type="number" name="" value="00"> 
+	<p class="configMenu__info">Short rest duration:</p>
+	<input type="number" name="" value="00">
+	<input type="number" name="" value="5">
+	<input type="number" name="" value="00"> 
+	<p class="configMenu__info">Long rest duration:</p>
+	<input type="number" name="" value="00">
+	<input type="number" name="" value="15">
+	<input type="number" name="" value="00"> 
+	<p class="configMenu__info">Long rest after sesion:</p>
+	<input type="number" name="" value="4">
+	<p class="configMenu__info">Theme color</p>
+	<button class="configMenu__colorButton"></button>
+	<button class="configMenu__colorButton"></button>
+	<button class="configMenu__colorButton"></button>
+	<p class="configMenu__info">Dark Mode</p>
+	<input type="checkbox" name="">
 </div>
 <button class="startTimer">Iniciar</button>
 <script type="text/javascript" src="app.js"></script>
