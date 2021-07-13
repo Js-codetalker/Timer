@@ -1,7 +1,8 @@
 let hours = document.querySelector('.remainHours'),
 	minutes = document.querySelector('.remainMinutes'),
 	seconds = document.querySelector('.remainSeconds'),
-	starButton = document.querySelector('.startTimer');
+	starButton = document.querySelector('.startTimer'),
+	title = document.getElementById('title');
 
 const countdown = element => {
 		element.value = ("0"+(parseInt(element.value)-1)).slice(-2)
@@ -22,5 +23,6 @@ starButton.addEventListener('click', ()=> {
 			clearInterval(interval)
 		}
 		countdown(seconds)
+		title.innerHTML = `${hours.value}:${minutes.value}:${seconds.value}`
 	},1000)
 })
