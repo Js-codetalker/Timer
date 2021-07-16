@@ -1,0 +1,41 @@
+:root {
+	--color1: rgb(255,255,255);
+	--color2: rgba(8,7,82,.8);
+}
+
+.timer {
+	background: var(--color2);
+	width: 700px;
+	height: 300px;
+	border-radius: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.timer__config {
+    display: flex;
+    justify-content: flex-end;
+}
+.timer__countdownContainer {
+    display: flex;
+    justify-content: center;
+}
+.timer__countdownContainer > p {
+	font-size: 6em;
+	margin: 0;
+}
+.timer__countdownContainer-numbers {
+    width: 200px;
+    height: 150px;
+    background: none;
+    border: none;
+    font-size: 6em;
+    text-align: center;
+}
+.remainHours:after {
+	content: ":";
+	z-index: 10;
+	font-size: 6em;
+}
+.alarm {
+	display: none;
+}
