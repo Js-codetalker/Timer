@@ -1,52 +1,63 @@
 let startButton = document.querySelector('.timer__startButton'),
 	resetButton = document.querySelector('.timer__resetButton'),
-	audio = document.querySelector('.alarm')
+	audio = document.querySelector('.alarm'),
 	title = document.getElementById('title'),
-	interval = setInterval(()=> {},1000);
+	currentTime,
+	deadline,
+	/*hours = [document.querySelector('.remainHours'),null],*/
+	minutes = [document.querySelector('.remainMinutes'),null],
+	seconds = [document.querySelector('.remainSeconds'),null];
 
-	clearInterval(interval);
 
-const starTimerFunction = () => {
-	let currentTime = Date.now(),
-		hours = [document.querySelector('.remainHours'),parseInt(document.querySelector('.remainHours').value)*3600000],
-		minutes = [document.querySelector('.remainMinutes'),parseInt(document.querySelector('.remainMinutes').value)*60000],
-		seconds = [document.querySelector('.remainSeconds'),parseInt(document.querySelector('.remainSeconds').value)*1000],
-		deadline = currentTime + hours[1] + minutes[1] + seconds[1];
+const startTimerFunction = () => {
+	minutes[1] = parseInt(document.querySelector('.remainMinutes').value);
+	seconds[1] = parseInt(document.querySelector('.remainSeconds').value)
+	countdown(/*hours[1],*/minutes[1],seconds[1])
+
+}
+
+const countdown = (/*hoursF,*/minutesF,secondsF) => {
+		
+		deadline = Date.now() + /*hoursF*3600000*/ + minutesF*60000 + secondsF*1000;
 
 
 	interval = setInterval(()=> {
 		currentTime = Date.now()-1000
 
-		if (deadline - currentTime >= 3600000) {hours[0].value = timeToSting(Math.trunc((deadline - currentTime) / 3600000))}
+		/*if (deadline - currentTime >= 3600000) {hours[0].value = timeToString(Math.trunc((deadline - currentTime) / 3600000))}*/
 
-		if (deadline - currentTime - 3600000*parseInt(hours[0].value) >= 60) {minutes[0].value = timeToSting(Math.trunc((deadline - currentTime - 3600000*parseInt(hours[0].value))/60000))}
+		if (deadline - currentTime/* - 3600000*parseInt(hours[0].value)*/ >= 60) {minutes[0].value = timeToString(Math.trunc((deadline - currentTime /*- 3600000*parseInt(hours[0].value)*/)/60000))}
 		
-		seconds[0].value = timeToSting(Math.trunc((deadline - currentTime - 3600000*parseInt(hours[0].value) - 60000*parseInt(minutes[0].value))/1000))
+		seconds[0].value = timeToString(Math.trunc((deadline - currentTime/* - 3600000*parseInt(hours[0].value)*/ - 60000*parseInt(minutes[0].value))/1000))
+
+		title.innerHTML = `${minutes[0].value}:${seconds[0].value}`
+
+		resetTimer()
+		
+		if (/*parseInt(hours[0].value) == 0 &&*/ parseInt(minutes[0].value) == 0 && parseInt(seconds[0].value) == 0) {
+			clearInterval(interval)
+			audio.play()
+		}
+
 		},1000)
 }
 
-const timeToSting = number => {
+const timeToString = number => {
 		return ("0"+number).slice(-2)
 }
 const resetTimer = () => {
 	resetButton.addEventListener('click',()=> {
-	startButton.removeEventListener('click',starTimerFunction)
+	startButton.removeEventListener('click',startTimerFunction)
 	clearInterval(interval);
-	hours.remainTime = hours.configuredTime;
-	minutes.remainTime = minutes.configuredTime;
-	seconds.remainTime = seconds.configuredTime;
-	hours.element.value = hours.configuredTime;
-	minutes.element.value = minutes.configuredTime;
-	seconds.element.value = seconds.configuredTime;
+	/*hours[0].value = timeToString(hours[1]);*/
+	minutes[0].value = timeToString(minutes[1]);
+	seconds[0].value = timeToString(seconds[1]);
 
-	starTimer();
+	startTimer();
 })
 }
-const starTimer = () => {
-	startButton.addEventListener('click', starTimerFunction)
-	resetTimer()
+const startTimer = () => {
+	startButton.addEventListener('click', startTimerFunction);
 }
 
-starTimer()
-
-
+startTimer()/*this autoruns if countdown is placed directly*/

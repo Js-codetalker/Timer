@@ -7,12 +7,12 @@
 </head>
 <body> 
 <div class="timer">
-	<div class="timer__config">
+	<!--<div class="timer__config">
 		<img src="#" class="timer__config-img">
-	</div>
+	</div>-->
 	<div class="timer__countdownContainer">
-		<input type="number" class="timer__countdownContainer-numbers remainHours" value="00"></input>
-		<p>:</p>
+		<!--<input type="number" class="timer__countdownContainer-numbers remainHours" value="00"></input>
+		<p>:</p>-->
 		<input type="number" class="timer__countdownContainer-numbers remainMinutes" value="25"></input>
 		<p>:</p>
 		<input type="number" class="timer__countdownContainer-numbers remainSeconds" value="00"></input>
@@ -20,16 +20,16 @@
 	<button class="timer__startButton"></button>
 	<button class="timer__resetButton"></button>
 </div>
-<div class="configMenu">
+<!--<div class="configMenu">
 	<img src="#" class="configMenu__closeMenu">
 	<p class="configMenu__info">Work time duration:</p>
 	<input type="number" name="" value="00">
 	<input type="number" name="" value="25">
 	<input type="number" name="" value="00"> 
 	<p class="configMenu__info">Short rest duration:</p>
-	<input type="number" name="" value="00">
-	<input type="number" name="" value="5">
-	<input type="number" name="" value="00"> 
+	<input type="number" name="" value="00" id="shortRestHours">
+	<input type="number" name="" value="5" id="shortRestMinutes">
+	<input type="number" name="" value="00" id="shortRestSeconds"> 
 	<p class="configMenu__info">Long rest duration:</p>
 	<input type="number" name="" value="00">
 	<input type="number" name="" value="15">
@@ -42,10 +42,8 @@
 	<button class="configMenu__colorButton"></button>
 	<p class="configMenu__info">Dark Mode</p>
 	<input type="checkbox" name="">
-</div>
-<button class="startTimer">Iniciar</button>
+</div>-->
 <audio class="alarm" src="assets/alarm-clock.mp3" controls=""></audio>
 <script type="text/javascript" src="app.js"></script>
-<!--<script type="text/javascript" src="other.js"></script>-->
 </body>
 </html>
