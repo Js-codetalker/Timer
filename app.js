@@ -52,6 +52,7 @@ const resetTimer = () => {
 	/*hours[0].value = timeToString(hours[1]);*/
 	minutes[0].value = timeToString(minutes[1]);
 	seconds[0].value = timeToString(seconds[1]);
+	title.innerHTML = `Podomoro clock`
 
 	startTimer();
 })

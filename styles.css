@@ -5,14 +5,18 @@
 body {
 	display: flex;
 	justify-content: center;
+	align-content: center;
+	background: rgba(0, 0, 0, 1.0);
+	height: 100vh;
 }
 .timer {
-	background: var(--color2);
+	background
 	width: 700px;
 	height: 300px;
 	border-radius: 20px;
 	padding: 20px;
 	box-sizing: border-box;
+	margin: auto;
 }
 .timer__config {
     display: flex;
@@ -23,9 +27,6 @@ body {
     justify-content: center;
     font-family: 'Nunito Sans', sans-serif;
 }
-.timer__countdownContainer > p {
-	margin: 0;
-}
 .timer__info {
 	display: flex;
 	justify-content: center;
@@ -35,15 +36,33 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 	font-size: 1.2em;
 	display: inline-block;
-	margin: 0 70px;
+	margin: 0 40px;
+	color: var(--color1);
+}
+.timer__countdownContainer-background {
+	width: 140px;
+	height: 140px;
+	padding: 3px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background-image: linear-gradient(to top, #041151, #091b66, #0e267d, #113194, #113dac, #0b54c4, #036bdc, #0083f3, #00a7ff, #00c8ff, #00e5ff, #23fff1);
+
 }
 .timer__countdownContainer-background-numbers {
-    width: 180px;
+    width: 130px;
     height: 130px;
     background: none;
     border: none;
     font-size: 6em;
     text-align: center;
+	color: var(--color1);
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 1.0);
+
+}
+.timer__countdownContainer-background-numbers:focus {
+	border: none;
+	outline: none;
 }
 .timer__buttonContainer {
 	width: 120px;
@@ -74,11 +93,8 @@ body {
 .points {
 	width: 20px;
 	height: 100%;
-}
-.remainHours:after {
-	content: ":";
-	z-index: 10;
-	font-size: 6em;
+	color: var(--color1);
+	margin: 0 10px;
 }
 .alarm {
 	display: none;
