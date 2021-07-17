@@ -2,12 +2,14 @@
 	--color1: rgb(255,255,255);
 	--color2: rgba(8,7,82,.8);
 }
+html {
+}
 body {
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	background: rgba(0, 0, 0, 1.0);
-	height: 100vh;
+	height: 100vh;	
 }
 .timer {
 	background
@@ -36,7 +38,8 @@ body {
     font-family: 'Nunito Sans', sans-serif;
 	font-size: 1.2em;
 	display: inline-block;
-	margin: 0 40px;
+	margin: 0 60px;
+	margin-top: 10px;
 	color: var(--color1);
 }
 .timer__countdownContainer-background {
@@ -63,6 +66,11 @@ body {
 .timer__countdownContainer-background-numbers:focus {
 	border: none;
 	outline: none;
+}
+.buttonsContainerFlex {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 15px;
 }
 .timer__buttonContainer {
 	width: 120px;
